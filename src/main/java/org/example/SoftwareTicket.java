@@ -29,11 +29,11 @@ public class SoftwareTicket extends Ticket {
     // -----------------------------------------
     @Override
     public int urgencyScore() {
-        int score = getPriority() * 10 + getDaysOpen() * 3;
-        if (securityIssue) score += 15;
-        if (affectsLogin) score += 10;
+        int score = getPriority() * 10 + getDaysOpen();
+        if (securityIssue) score += 25;
+        if (affectsLogin) score += 15;
         if (system.equalsIgnoreCase("VPN") ||
-            system.equalsIgnoreCase("LMS")) score += 5;
+            system.equalsIgnoreCase("LMS")) score += 8;
         return score;
     }
 }
